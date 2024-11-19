@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <input class="name" placeholder="請輸入商品名稱">
+    <input class="price" placeholder="請輸入商價格">
+    <button onclick="plus()">新增</button>
+    <div></div>
+    <script>
+        let product = []
+        let eachprice = []
+        function plus() {
+            const name = document.querySelector('.name')
+            const price = document.querySelector('.price')
+            product.push(name.value)
+            eachprice.push(price.value)
+            name.value = ""
+            price.value = ""
+            let html = ""
+
+            for (let i = 0; i < product.length; i++) {
+               html  += `<p>${product[i]}   ${eachprice[i]}   <button onclick = "removeProduct(${i})">刪除</button></p>
+`
+            }
+             document.querySelector('div').innerHTML = html
+
+        }
+        function removeProduct(i){
+            product.splice(i,1)
+            eachprice.splice(i,1)
+            let html = ""
+            for (let i = 0; i < product.length; i++) {
+               html  += `<p>${product[i]}   ${eachprice[i]}   <button onclick = "removeProduct(${i})">刪除</button></p>
+`
+            }
+             document.querySelector('div').innerHTML = html
+        }
+
+    </script>
+</body>
+
+</html>

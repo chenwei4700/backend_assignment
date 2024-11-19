@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="console.log(bill_car);">購物車總額</button>
+    <button onclick="console.log('購物車已清空'); bill_car = 0; console.log(bill_car);">清空購物車</button>
+    <br>
+    <img src="圖1.png" alt="...">
+    <br>
+    $100
+    <button onclick="bill_car += 100; console.log(bill_car);">加入購物車</button>
+    <br>
+    <img src="圖2.jpg" alt="...">
+    <br>
+    $200
+    <button onclick="bill_car += 200; console.log(bill_car);">加入購物車</button>
+    <script>
+        let bill_car = 0;
+        let age = 19;
+        let height = 178;
+        let id = `阿威今年${age+1}歲 身高${height+1}公分`;//``:為字串的第三種表達方式跟f字川相似，可在框框內做運算，換行可直接按enter
+        console.log(id);
+        //const、let差別:const無法修改內容
+        //物件 object
+            //資料結合 可直接{}或 let x = {}
+            let product = {
+                name: "幹你娘機掰",
+                price: 100,
+                p2: {//可在物件裡建物建
+                    e1: 100,
+                    e2: "操"
+                },
+                fuck:function result(uc){//屬性也可以設定為函數
+            
+        }
+            }
+            console.log(product.name);
+            product.price = 200;//可在外部修改
+            product.shit = "222/222/222";//可在外部增加
+            console.log(product);
+            delete product.shit;//可在外部刪除
+            console.log(product);
+            console.log(product["name"]);//另一中呼叫物件屬性的方式
+            console.log(product.p2.e1)//呼叫方法多一個.
+            product.fuck()//呼叫方法為加一個()類似console.log()
+
+            //儲存資料在瀏覽器裡localStorage.setItem()
+            localStorage.setItem("price", 1000)
+        
+    </script>
+</body>
+</html>

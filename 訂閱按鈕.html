@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="change()">訂閱</button><!--訂閱前不可有空格、換行，會影響判斷。若只想擷取文字可使用innerText-->
+
+    <script>
+        let but = document.querySelector("button")
+
+
+        function change(){
+            if (but.innerHTML === "訂閱"){
+                but.innerHTML = "已訂閱"
+                console.log(but.innerHTML)
+            }
+            else{
+                but.innerHTML = "訂閱"
+                console.log(but.innerHTML)
+            }
+
+
+        }
+    </script>
+</body>
+</html>

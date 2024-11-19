@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="showCart(); storage()">購物車總額</button>
+    <button onclick="
+            
+            cart.totalPrice = 0;
+            cart.product1.num = 0; 
+            cart.product2.num = 0; 
+            cart.productNum = 0; 
+            localStorage.removeItem('cart');
+            showCart();
+            
+            ">清空購物車</button>
+    <br>
+    <img src="圖1.png" alt="...">
+    <br>
+    $100
+    <button onclick="
+            
+            cart.totalPrice += 100; 
+            cart.productNum++; 
+            cart.product1.num++; 
+            showCart();
+            storage()
+    ">加入購物車</button>
+    <br>
+    <img src="圖2.jpg" alt="...">
+    <br>
+    $200
+    <button onclick="
+            
+            cart.totalPrice += 200; 
+            cart.productNum++; 
+            cart.product2.num++; 
+            showCart();
+            storage()
+    ">加入購物車
+
+    </button>
+
+    <p class="cart"></p>
+    <script>
+        
+
+        let cart = JSON.parse(localStorage.getItem("cart"))
+        if (cart === null) {
+             cart = {
+                productNum: 0,
+                product1: {
+                    num: 0,
+                    name: "筆電1",
+                    price: 100
+                },
+                product2: {
+                    num: 0,
+                    name: "筆電2",
+                    price: 200
+                },
+                totalPrice: 0
+            }
+        }
+
+        function showCart() {
+            document.querySelector(".cart").innerHTML = `
+            目前商品數 : ${cart.productNum}<br>
+            ${cart.product1.name} : ${cart.product1.num}<br>
+            ${cart.product2.name} : ${cart.product2.num}<br>
+            目前購物車總額 : ${cart.totalPrice}
+            `
+        }
+
+
+        function storage() {
+            const jasoncart = JSON.stringify(cart)
+            localStorage.setItem("cart", jasoncart)
+
+        }
+        showCart()
+
+        //falsy & truethy value ! = 反運算
+        // false, "", NaN, undefined(現在沒有值，以後可能有), null(本來就沒有值，以後也不會有), 0/0, 0
+
+
+        // localStorage Json(類似object格式，屬性需用雙引號包住。屬性對應的質部會有函式)  setItem("資料名稱",  資料)
+        // const jasoncart = JSON.stringify(cart)//將物件轉換成JSON格式
+        // console.log(jasoncart)
+        // const jasoncart2 = JSON.parse(jasoncart)//將JSON格式轉回物件
+        // console.log(jasoncart2)
+        // localStorage.setItem("cart", cart)//可將資料處存在瀏覽器中，只能儲存字串
+        // localStorage.getItem("cart")//取得資料
+        // localStorage.removeItem("cart")//移除資料
+
+
+    </script>
+</body>
+
+</html>

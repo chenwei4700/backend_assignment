@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            display: inline;
+            width:100px ;
+            font-size: 25px;
+        }
+        p{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <p>請選擇 剪刀 石頭 布</p>
+    <button onclick="result('剪刀')">剪刀</button>
+    <button onclick="result('石頭')">石頭</button>
+    <button onclick="result('布')">布</button>
+
+    <script>
+        //function = def
+        let uc = "";
+        
+
+        function ccn(){
+            const rdn = Math.random()*3;
+            let cc = "";
+            console.log(rdn);
+
+            if (0 <= rdn && rdn < 1){
+                cc = "剪刀";
+            }else if(1 <= rdn && rdn < 2){
+                cc = "石頭";
+            }else{
+                cc = "布";
+            }
+            return cc
+        }
+
+        function result(uc){
+            const cc = ccn();
+            if (uc === "剪刀"){
+                if (cc === "剪刀"){
+                    alert(`你出剪刀 電腦出${cc} 你們平局`)
+                }else if (cc === "石頭"){
+                    alert(`你出剪刀 電腦出${cc} 你輸`)
+                }else{
+                    alert(`你出剪刀 電腦出${cc} 你贏`)
+                }
+
+            }else if (uc === "石頭"){
+                if (cc === "剪刀"){
+                    alert(`你出石頭 電腦出${cc} 你贏`)
+                }else if (cc === "石頭"){
+                    alert(`你出石頭 電腦出${cc} 你們平局`)
+                }else{
+                    alert(`你出石頭 電腦出${cc} 你輸`)
+                }
+            }else{
+                if (cc === "布"){
+                    alert(`你出布 電腦出${cc} 你們平局`)
+                }else if (cc === "石頭"){
+                    alert(`你出布 電腦出${cc} 平局你贏`)
+                }else{
+                    alert(`你出布 電腦出${cc} 你輸`)
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

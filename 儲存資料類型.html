@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //基本類型 & 引用類型 資料
+        //基本類型 : 數字 字串 布林值
+        //引用類型 : 物件
+
+        // let a = 10
+        // let b = 20皆儲存在stack棧內存(較簡單，變動少)
+        // let c = {
+        //     name:"小白",
+        //     age:25
+        // }儲存在heap堆內存(較複雜，變動多，給予地址在內存中的位置)
+
+        // const c = {
+        //     name : "小白",
+        //     age : 25
+        // }
+        //可改寫成
+        // const name = "小白"
+        // const age = 25
+        // const c = {
+        //     name,
+        //     age
+        // }
+        // c.name = "小黑"//可修改，因為物件的儲存方式為地址
+
+        
+        const c = {
+            name : "小白",
+            age : 25
+        }
+        // const name = c.name
+        // const age = c.age
+        //可改寫成
+        const {name,age} = c;
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>你好</button>
+    <p>小白</p>
+    <p class="js-p">小綠</p>
+
+
+    <script>
+        //document.querySelector():從標籤中獲取資料
+        // const buttonElement = document.querySelector("button")//物件
+        // console.log(buttonElement.innerHTML) //顯示你好
+        // const buttonElement = document.querySelector("p")//物件，只會取得第一格，可裡用class來指定不同標籤
+        // console.log(buttonElement.innerHTML) //顯示小白
+        const buttonElement = document.querySelector(".js-p")//可利用class來指定不同標籤，若為id . 要改成 #
+        console.log(buttonElement.innerHTML) //顯示小綠
+
+    </script>
+</body>
+</html>

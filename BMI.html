@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="userHeight" placeholder="請輸入身高(公分)">
+    <input class="userWeight" placeholder="請輸入體重(公斤)">
+    <button onclick="calculate()">計算BMI</button>
+    <p>BMI:</p>
+
+    <script>
+        function calculate(){
+            let height = document.querySelector('.userHeight').value
+            let weight = document.querySelector('.userWeight').value
+            height =  Number(height)
+            height /= 100
+            weight = Number(weight) 
+            let BMIC = weight / height**2
+            document.querySelector("p").innerHTML = `BMI:${BMIC}`
+            
+
+        }
+    </script>
+</body>
+</html>
